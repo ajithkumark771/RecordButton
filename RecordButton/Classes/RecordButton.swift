@@ -193,7 +193,7 @@ public class RecordButton: UIButton {
     scale.fromValue = recording ? 1.0 : 0.88
     scale.toValue = recording ? 0.88 : 1
     scale.duration = duration
-    scale.fillMode = kCAFillModeForwards
+    scale.fillMode = CAMediaTimingFillMode.forwards
     scale.isRemovedOnCompletion = false
 
     let color = CABasicAnimation(keyPath: "backgroundColor")
@@ -204,13 +204,13 @@ public class RecordButton: UIButton {
 
     let circleAnimations = CAAnimationGroup()
     circleAnimations.isRemovedOnCompletion = false
-    circleAnimations.fillMode = kCAFillModeForwards
+    circleAnimations.fillMode = CAMediaTimingFillMode.forwards
     circleAnimations.duration = duration
     circleAnimations.animations = [scale, color]
 
     let borderColor: CABasicAnimation = CABasicAnimation(keyPath: "borderColor")
     borderColor.duration = duration
-    borderColor.fillMode = kCAFillModeForwards
+    borderColor.fillMode = CAMediaTimingFillMode.forwards
     borderColor.isRemovedOnCompletion = false
     borderColor.toValue = recording ? self.borderColor.cgColor : buttonColor
 
@@ -218,12 +218,12 @@ public class RecordButton: UIButton {
     borderScale.fromValue = recording ? 1.0 : 0.0
     borderScale.toValue = recording ? 0.0 : 1.0
     borderScale.duration = duration
-    borderScale.fillMode = kCAFillModeForwards
+    borderScale.fillMode = CAMediaTimingFillMode.forwards
     borderScale.isRemovedOnCompletion = false
 
     let borderAnimations = CAAnimationGroup()
     borderAnimations.isRemovedOnCompletion = false
-    borderAnimations.fillMode = kCAFillModeForwards
+    borderAnimations.fillMode = CAMediaTimingFillMode.forwards
     borderAnimations.duration = duration
     borderAnimations.animations = [borderColor, borderScale]
 
@@ -231,7 +231,7 @@ public class RecordButton: UIButton {
     fade.fromValue = recording ? 0.0 : 1.0
     fade.toValue = recording ? 1.0 : 0.0
     fade.duration = duration
-    fade.fillMode = kCAFillModeForwards
+    fade.fillMode = CAMediaTimingFillMode.forwards
     fade.isRemovedOnCompletion = false
 
     progressLayer.add(fade, forKey: "fade")
