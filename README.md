@@ -1,4 +1,4 @@
-# RecordButton
+# RecordButton - Swift 5
 
 iOS Button mimicking record button in Apple's VoiceRecorder app. It also displays the recording process when recording. It's great for a video recorder app with a fixed/maximum length like snapchat, vine, instragram.
 
