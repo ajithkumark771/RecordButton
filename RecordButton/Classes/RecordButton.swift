@@ -32,7 +32,7 @@ public class RecordButton: UIButton {
     }
   }
 
-  @IBInspectable open var borderWidth: CGFloat! = 6 {
+  @IBInspectable open var borderWidth: CGFloat = 6 {
     didSet {
       circleBorder.borderWidth = borderWidth
       setNeedsDisplay()
@@ -198,7 +198,7 @@ public class RecordButton: UIButton {
 
     let color = CABasicAnimation(keyPath: "backgroundColor")
     color.duration = duration
-    color.fillMode = kCAFillModeForwards
+    color.fillMode = CAMediaTimingFillMode.forwards
     color.isRemovedOnCompletion = false
     color.toValue = recording ? progressColor.cgColor : buttonColor.cgColor
 
